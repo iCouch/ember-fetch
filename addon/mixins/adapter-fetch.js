@@ -193,7 +193,7 @@ export default Ember.Mixin.create({
 
     const hash = this.ajaxOptions(url, type, options);
 
-    return this._ajaxRequest(hash)
+    return this._fetchRequest(hash.url, hash)
       .catch((error, response, requestData) => {
         throw this.ajaxError(this, response, null, requestData, error);
       })
